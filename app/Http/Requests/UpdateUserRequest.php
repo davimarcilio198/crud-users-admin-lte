@@ -23,6 +23,7 @@ class UpdateUserRequest extends StoreUserRequest
     {
         $rules = parent::rules();
 
+
         $rules['email'] = [
             'required',
             'email',

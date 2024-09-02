@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -13,6 +14,17 @@ class UserController extends Controller
     {
         $users = User::paginate(20);
         return view('auth.users.index', compact('users'));
+    }
+
+    public function create()
+    {
+        return view('auth.users.create');
+    }
+
+    public function store(StoreUserRequest $request)
+    {
+        User::create($request->validated());
+        return redirect()->route('user.index')->with(['type' => 'success', 'message' => 'Usuário criado com sucesso']);
     }
 
     public function show(string $id)
