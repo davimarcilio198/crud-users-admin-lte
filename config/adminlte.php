@@ -316,11 +316,7 @@ return [
             'url' => 'user',
             'icon' => 'fas fa-fw fa-user',
         ],
-        [
-            'text' => 'Criar novo usuário',
-            'url' => 'user/create',
-            'icon' => 'fas fa-fw fa-user',
-        ],
+
 
     ],
 
