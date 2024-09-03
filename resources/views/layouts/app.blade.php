@@ -13,7 +13,7 @@
 {{-- Extend and customize the page content header --}}
 
 @section('content_header')
-    @vite('../../resources/css/app.css')
+    @vite('resources/css/app.css')
 
     @hasSection('content_header_title')
         <h1 class="text-muted">

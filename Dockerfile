@@ -4,10 +4,13 @@ FROM php:8.3-fpm
 ARG user=unimed
 ARG uid=1000
 
-# Install system dependencies
+# Install system dependencies'
 RUN apt-get update && apt-get install -y \
     git \
     curl \
+    apt-transport-https \
+    build-essential \
+    ca-certificates \
     libpng-dev \
     libonig-dev \
     libxml2-dev \
@@ -15,6 +18,9 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip
 
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
+    && apt-get install -y nodejs \
+    && apt-get install -y npm
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
