@@ -3,7 +3,9 @@
 
 @section('title')
     {{ config('adminlte.title') }}
-    @hasSection('subtitle') | @yield('subtitle') @endif
+    @hasSection('subtitle')
+        | @yield('subtitle')
+    @endif
 
 
 @stop
@@ -25,7 +27,7 @@
             @endif
         </h1>
     @endif
-    <x-alert ></x-alert>
+    <x-alert></x-alert>
 
 @stop
 
@@ -54,20 +56,15 @@
 {{-- Add common Javascript/Jquery code --}}
 
 @push('js')
-<script>
-
-
-</script>
+    <script></script>
 @endpush
 
 {{-- Add common CSS customizations --}}
 
 @push('css')
-<style type="text/css">
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-</style>
+    <style type="text/css">
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+    </style>
 @endpush
